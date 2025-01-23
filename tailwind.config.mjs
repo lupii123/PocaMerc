@@ -23,7 +23,7 @@ export default {
 		extend: {
 			colors: {
 				primary: "#ffffff",
-				secondary: "#DA70D6",
+				secondary: "#570f57",
 				accent: "#DAF7A6",
 				background: 'var(--background)',
 				foreground: 'var(--foreground)'

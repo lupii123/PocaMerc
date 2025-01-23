@@ -33,7 +33,7 @@ const Footer = () => {
         <footer className='bg-black text-accent flex flex-row gap-4'>
             <div className="container mx-auto py-6 xl:py-8 grid grid-cols-1 xl:grid-cols-2 gap-4">
 
-                <div className="flex flex-col gap-8 p-4">
+                <div className="flex flex-col gap-8 p-4 text-center xl:text-start">
                     <Link href={"/"} className="py-8">
                         <h2 className="font-semibold text-accent">
                             PocaMerc<span className="text-accent">.</span>
@@ -41,7 +41,7 @@ const Footer = () => {
                     </Link>
 
                     {/* socials */}
-                    <div className="flex flex-row gap-8 text-2xl">
+                    <div className="flex flex-row gap-8 text-2xl items-center justify-center xl:justify-start">
                         <Link href={"https://youtube.com"} target="_blank">
                             <FaYoutube />
                         </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
                         </Link>
                     </div>
 
-                    <div className="">
+                    <div className="flex flex-col">
                         <h3 className="uppercase">PocaMerc inc.</h3>
                         <text className="text-sm">
                             Business no: 123-45-67890 | CEO: Roseanne Park | Address: S-202, 338, Gwanggyojungang-ro, Suji-gu, Yongin-si, Gyeonggi-do, 16942 South Korea | Mail: hello@pocamerc.com
@@ -70,9 +70,9 @@ const Footer = () => {
                             <Card key={index} className="flex flex-col justify-center items-center bg-black text-accent border-none">
                                 <CardHeader className="flex flex-col items-center justify-center p-2">
                                     <CardTitle>{item.icon}</CardTitle>
-                                    <CardDescription className="text-accent">{item.title}</CardDescription>
+                                    <CardDescription className="text-accent uppercase">{item.title}</CardDescription>
                                 </CardHeader>
-                                <CardContent className="text-sm text-center">
+                                <CardContent className="text-sm text-center capitalize">
                                     {item.description}
                                 </CardContent>
                             </Card>

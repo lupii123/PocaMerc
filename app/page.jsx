@@ -101,13 +101,6 @@ export default function Home() {
     <section className="h-full">
       {/* sampul */}
       <Carousel className="w-full" opts={{ loop: true, align: "start" }}>
-        {/* <div className="h-[460px] relative group flex justify-center items-center bg-primary">
-          <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-          <div className="relative w-full h-full">
-            <Image src={"/sampul/sampul_awal.webp"} fill className="object-fill" alt="" />
-          </div>
-        </div> */}
-
         <CarouselContent>
           {sampul.map((item, index) => {
             return (
@@ -115,7 +108,7 @@ export default function Home() {
                 <div className="h-[460px] relative group flex justify-center items-center bg-primary">
                   <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                   <div className="relative w-full h-full">
-                    <Image src={item.src} fill className="object-fill" alt="" />
+                    <Image src={item.src} fill className="object-cover" alt="" />
                   </div>
                 </div>
               </CarouselItem>
@@ -126,7 +119,7 @@ export default function Home() {
         <CarouselNext />
       </Carousel>
 
-      <div className="container mx-auto h-full flex flex-col gap-8 my-8">
+      <div className="container mx-auto h-full flex flex-col gap-20 my-8">
         {/* photocard */}
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">photocard</h1>
