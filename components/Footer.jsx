@@ -30,7 +30,7 @@ const cards = [
 
 const Footer = () => {
     return (
-        <footer className='bg-black text-accent flex flex-row gap-4 mt-8'>
+        <footer className='bg-black text-accent flex flex-row gap-4'>
             <div className="container mx-auto py-6 xl:py-8 grid grid-cols-1 xl:grid-cols-2 gap-4">
 
                 <div className="flex flex-col gap-8 p-4">

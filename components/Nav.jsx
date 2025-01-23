@@ -21,7 +21,7 @@ const links = [
         path: "/fashion"
     },
     {
-        name: "aboutus",
+        name: "about us",
         path: "/aboutus"
     },
 ]
