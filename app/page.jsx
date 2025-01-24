@@ -37,30 +37,33 @@ const photocards = [
 
 const albums = [
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
+    artist: "seventeen",
+    title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
     release: "6 Oktober 2024",
     price: "320.000",
+    image: "/album/seventeen-best.webp"
   },
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
+    artist: "seventeen",
+    title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
     release: "6 Oktober 2024",
     price: "320.000",
+    image: "/album/seventeen-best.webp"
   },
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
-    release: "6 Oktober 2024",
-    price: "320.000",
+    artist: "blackpink",
+    title: "(YG SELECT & KPOP MERCH Exclusive Benefit) JISOO - FIRST SINGLE ALBUM ME",
+    release: "25 November 2024",
+    price: "252.000",
+    image: "/album/yg_select_bp.webp"
   },
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
-    release: "6 Oktober 2024",
-    price: "320.000",
+    artist: "LE SSERAFIM",
+    title: "LE SSERAFIM - 4th Mini Album 'CRAZY' (BALACLAVA ver)",
+    release: "1 Januari 2025",
+    price: "505.000",
+    image: "/album/lesserafim-album.webp"
   },
-
 ]
 
 const fashions = [
@@ -157,19 +160,19 @@ export default function Home() {
         {/* album */}
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">album</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-row gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
                   <Card className="border-0 shadow-lg">
-                    <CardHeader>
-                      <CardTitle>{item.title}</CardTitle>
+                    <CardHeader className="p-4 pb-0">
+                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      Photo
+                    <CardContent className="p-0 overflow-hidden">
+                      <img alt="" src={item.image} className="object-cover hover:scale-125 transition-all" />
                     </CardContent>
-                    <CardFooter className="flex flex-col items-start justify-center gap-2">
+                    <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
                       <span className="uppercase bg-accent w-full text-center">{item.release}</span>
                       <span>Rp.{item.price}</span>
                     </CardFooter>

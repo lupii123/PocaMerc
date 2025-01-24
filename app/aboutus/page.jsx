@@ -83,18 +83,20 @@ const AboutUs = () => {
                         Our Social Media
                     </h2>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-between">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                         {socials.map((item, index) => {
                             return (
-                                <Card key={index} className="flex flex-col text-center items-center justify-center w-full py-6 xl:py-8 border-0 border-x-2 border-secondary bg-accent rounded-xl shadow-lg">
-                                    <CardContent className="text-5xl xl:text-7xl text-secondary">
-                                        <Link href={item.link} target="_blank">
+                                <Card key={index} className="group w-full py-6 xl:py-8 border-0 border-x-2 border-secondary bg-accent hover:bg-accent/80 rounded-xl shadow-lg transition-all">
+                                    <Link href={item.link} target="_blank" className="flex flex-col text-center items-center justify-center">
+                                        <CardContent className="text-5xl xl:text-7xl text-secondary group-hover:scale-125 transition-all">
+
                                             {item.icon}
-                                        </Link>
-                                    </CardContent>
-                                    <CardTitle className="capitalize font-semibold text-xl lg:text-2xl text-secondary">
-                                        {item.title}
-                                    </CardTitle>
+
+                                        </CardContent>
+                                        <CardTitle className="capitalize font-semibold text-xl lg:text-2xl text-secondary">
+                                            {item.title}
+                                        </CardTitle>
+                                    </Link>
                                 </Card>
                             )
                         })}
