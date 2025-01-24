@@ -130,7 +130,7 @@ export default function Home() {
             {photocards.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card className="border-2 border-secondary rounded-sm">
+                  <Card className="border-0 shadow-lg">
                     <CardHeader className="p-4 pb-0">
                       <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
@@ -161,7 +161,7 @@ export default function Home() {
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card className="border-2 border-secondary rounded-lg">
+                  <Card className="border-0 shadow-lg">
                     <CardHeader>
                       <CardTitle>{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
@@ -192,7 +192,7 @@ export default function Home() {
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card className="border-2 border-secondary rounded-lg">
+                  <Card className="border-0 shadow-lg">
                     <CardHeader>
                       <CardTitle>{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>

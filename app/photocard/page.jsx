@@ -1,7 +1,8 @@
 'use client';
 import { Card, CardContent, CardTitle, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
 
 const photocards = [
     {
@@ -90,20 +91,35 @@ const photocards = [
     },
 ]
 
+
+
 const Photocard = () => {
+
+    const postPerPage = 8;
+    const [data, setData] = useState(photocards);
+    const [startIndex, setStartIndex] = useState(0);
+    const [endIndex, setEndIndex] = useState(postPerPage);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    let pages = [];
+    for (let i = 1; i <= Math.ceil(data.length / postPerPage); i++) {
+        pages.push(i);
+    }
+
     return (
         <div className='w-full h-full'>
             <div className='flex flex-col'>
-                <div className='w-full h-[280px] bg-accent flex justify-center items-center'>
+                <div className='w-full h-[280px] bg-accent flex flex-col justify-center items-center'>
                     <h1 className='uppercase text-secondary font-bold'>Photocard</h1>
+                    <h3 className='uppercase text-secondary font-bold'>Collection</h3>
                 </div>
 
                 <div className='container mx-auto my-20'>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-                        {photocards.map((item, index) => {
+                        {data.slice(startIndex, endIndex).map((item, index) => {
                             return (
                                 <Link href={"/"} key={index}>
-                                    <Card className="border-2 border-secondary rounded-sm">
+                                    <Card className="border-0 shadow-lg">
                                         <CardHeader className="p-4 pb-0">
                                             <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                                             <CardDescription className="uppercase">{item.artist}</CardDescription>
@@ -120,9 +136,53 @@ const Photocard = () => {
                             );
                         })}
                     </div>
+
+                    <Pagination className={"mt-10"}>
+                        <PaginationContent>
+                            <PaginationItem className="cursor-pointer">
+                                <PaginationPrevious
+                                    className={startIndex === 0 ? "pointer-events-none opacity-50" : undefined}
+                                    onClick={() => {
+                                        setStartIndex(startIndex - postPerPage);
+                                        setEndIndex(endIndex - postPerPage);
+                                        setCurrentPage(currentPage - 1);
+                                    }}
+                                />
+                            </PaginationItem>
+
+                            {
+                                pages.map((page, index) => {
+                                    return (
+                                        <PaginationItem key={index} className={currentPage === page ? "bg-neutral-100 rounded-md pointer-events-none" : "cursor-pointer"}>
+                                            <PaginationLink
+                                                onClick={() => {
+                                                    setCurrentPage(page);
+                                                    setStartIndex((page - 1) * postPerPage);
+                                                    setEndIndex(page * postPerPage);
+                                                }}
+                                            >
+                                                {page}
+                                            </PaginationLink>
+                                        </PaginationItem>
+                                    )
+                                })
+                            }
+
+                            <PaginationItem className="cursor-pointer">
+                                <PaginationNext
+                                    className={endIndex >= data.length ? "pointer-events-none opacity-50" : undefined}
+                                    onClick={() => {
+                                        setStartIndex(startIndex + postPerPage);
+                                        setEndIndex(endIndex + postPerPage);
+                                        setCurrentPage(currentPage + 1);
+                                    }}
+                                />
+                            </PaginationItem>
+                        </PaginationContent>
+                    </Pagination>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
