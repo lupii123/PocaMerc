@@ -34,11 +34,13 @@ const Footer = () => {
             <div className="container mx-auto py-6 xl:py-8 grid grid-cols-1 xl:grid-cols-2 gap-4">
 
                 <div className="flex flex-col gap-8 p-4 text-center xl:text-start">
-                    <Link href={"/"} className="py-8">
-                        <h2 className="font-semibold text-accent">
-                            PocaMerc<span className="text-accent">.</span>
-                        </h2>
-                    </Link>
+                    <div className="py-8">
+                        <Link href={"#top"}>
+                            <h2 className="font-semibold text-accent">
+                                PocaMerc<span className="text-accent">.</span>
+                            </h2>
+                        </Link>
+                    </div>
 
                     {/* socials */}
                     <div className="flex flex-row gap-8 text-2xl items-center justify-center xl:justify-start">
