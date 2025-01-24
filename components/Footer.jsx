@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link"
 import { FaInstagram, FaFacebook, FaYoutube, FaCheck, FaMoneyBillWave } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
@@ -35,11 +36,11 @@ const Footer = () => {
 
                 <div className="flex flex-col gap-8 p-4 text-center xl:text-start">
                     <div className="py-8">
-                        <Link href={"#top"}>
+                        <button onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }) }}>
                             <h2 className="font-semibold text-accent">
                                 PocaMerc<span className="text-accent">.</span>
                             </h2>
-                        </Link>
+                        </button>
                     </div>
 
                     {/* socials */}
@@ -60,9 +61,9 @@ const Footer = () => {
 
                     <div className="flex flex-col">
                         <h3 className="uppercase">PocaMerc inc.</h3>
-                        <text className="text-sm">
+                        <p className="text-sm">
                             Business no: 123-45-67890 | CEO: Roseanne Park | Address: S-202, 338, Gwanggyojungang-ro, Suji-gu, Yongin-si, Gyeonggi-do, 16942 South Korea | Mail: hello@pocamerc.com
-                        </text>
+                        </p>
                     </div>
                 </div>
 

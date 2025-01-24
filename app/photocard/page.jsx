@@ -146,6 +146,7 @@ const Photocard = () => {
                                         setStartIndex(startIndex - postPerPage);
                                         setEndIndex(endIndex - postPerPage);
                                         setCurrentPage(currentPage - 1);
+                                        window.scrollTo({ top: 100, behavior: "smooth" });
                                     }}
                                 />
                             </PaginationItem>
@@ -159,6 +160,7 @@ const Photocard = () => {
                                                     setCurrentPage(page);
                                                     setStartIndex((page - 1) * postPerPage);
                                                     setEndIndex(page * postPerPage);
+                                                    window.scrollTo({ top: 100, behavior: "smooth" });
                                                 }}
                                             >
                                                 {page}
@@ -175,6 +177,7 @@ const Photocard = () => {
                                         setStartIndex(startIndex + postPerPage);
                                         setEndIndex(endIndex + postPerPage);
                                         setCurrentPage(currentPage + 1);
+                                        window.scrollTo({ top: 100, behavior: "smooth" });
                                     }}
                                 />
                             </PaginationItem>
