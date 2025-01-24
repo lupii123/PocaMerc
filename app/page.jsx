@@ -7,29 +7,32 @@ import Link from "next/link";
 const photocards = [
   {
     artist: "blackpink",
-    title: "JENNIE - The 1st Studio Album RUBY (Photocard)",
+    title: "ROSE - -R- Photobook [Special Edition]",
     release: "2 Januari 2025",
     price: "290.000",
+    image: "/photocard/rose-r.webp"
   },
   {
-    artist: "blackpink",
-    title: "JENNIE - The 1st Studio Album RUBY (Photocard)",
-    release: "2 Januari 2025",
-    price: "290.000",
+    artist: "bts",
+    title: "BTS V - ‘TYPE 1’",
+    release: "28 Desember 2024",
+    price: "500.000",
+    image: "/photocard/bts_v_type1.webp"
   },
   {
-    artist: "blackpink",
-    title: "JENNIE - The 1st Studio Album RUBY (Photocard)",
-    release: "2 Januari 2025",
-    price: "290.000",
+    artist: "Seventeen",
+    title: "DICON VOLUME No. 26 (Unit-type) WONWOO MINGYU’",
+    release: "27 februari 2025",
+    price: "700.000",
+    image: "/photocard/dicon_volume_26.webp"
   },
   {
-    artist: "blackpink",
-    title: "JENNIE - The 1st Studio Album RUBY (Photocard)",
-    release: "2 Januari 2025",
-    price: "290.000",
+    artist: "Seventeen",
+    title: "DICON VOLUME No. 26 (Unit-type) WONWOO MINGYU’",
+    release: "27 februari 2025",
+    price: "700.000",
+    image: "/photocard/dicon_volume_26.webp"
   },
-
 ]
 
 const albums = [
@@ -123,19 +126,19 @@ export default function Home() {
         {/* photocard */}
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">photocard</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-row gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {photocards.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>{item.title}</CardTitle>
+                  <Card className="border-2 border-secondary rounded-sm">
+                    <CardHeader className="p-4 pb-0">
+                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      Photo
+                    <CardContent className="p-0 overflow-hidden">
+                      <img alt="" src={item.image} className="object-cover hover:scale-125 transition-all" />
                     </CardContent>
-                    <CardFooter className="flex flex-col items-start justify-center gap-2">
+                    <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
                       <span className="uppercase bg-accent w-full text-center">{item.release}</span>
                       <span>Rp.{item.price}</span>
                     </CardFooter>
@@ -158,7 +161,7 @@ export default function Home() {
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card>
+                  <Card className="border-2 border-secondary rounded-lg">
                     <CardHeader>
                       <CardTitle>{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
@@ -189,7 +192,7 @@ export default function Home() {
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card>
+                  <Card className="border-2 border-secondary rounded-lg">
                     <CardHeader>
                       <CardTitle>{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
