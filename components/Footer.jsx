@@ -4,7 +4,8 @@ import { FaInstagram, FaFacebook, FaYoutube, FaCheck, FaMoneyBillWave } from 're
 import { FaXTwitter } from 'react-icons/fa6'
 import { TbMailFilled } from 'react-icons/tb'
 import { RiCustomerService2Fill } from 'react-icons/ri'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 
 const cards = [
     {
@@ -29,6 +30,28 @@ const cards = [
     },
 ]
 
+const socials = [
+    {
+        icon: <FaYoutube />,
+        href: "https://youtube.com",
+        tooltip: "Youtube",
+    },
+    {
+        icon: <FaInstagram />,
+        href: "https://instagram.com",
+        tooltip: "Instagram",
+    },
+    {
+        icon: <FaFacebook />,
+        href: "https://facebook.com",
+        tooltip: "Facebook",
+    },
+    {
+        icon: <FaXTwitter />,
+        href: "https://x.com",
+        tooltip: "X",
+    },
+]
 const Footer = () => {
     return (
         <footer className='bg-black text-accent flex flex-row gap-4'>
@@ -45,18 +68,22 @@ const Footer = () => {
 
                     {/* socials */}
                     <div className="flex flex-row gap-8 text-2xl items-center justify-center xl:justify-start">
-                        <Link href={"https://youtube.com"} target="_blank">
-                            <FaYoutube />
-                        </Link>
-                        <Link href={"https://instagram.com"} target="_blank">
-                            <FaInstagram />
-                        </Link>
-                        <Link href={"https://x.com"} target="_blank">
-                            <FaXTwitter />
-                        </Link>
-                        <Link href={"https://facebook.com"} target="_blank">
-                            <FaFacebook />
-                        </Link>
+                        {socials.map((item, index) => {
+                            return (
+                                <TooltipProvider delayDuration={200} skipDelayDuration={0} key={index}>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <Link href={item.href} target="_blank">
+                                                {item.icon}
+                                            </Link>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>{item.tooltip}</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                            )
+                        })}
                     </div>
 
                     <div className="flex flex-col">
