@@ -71,23 +71,26 @@ const fashions = [
     artist: "nct 127",
     title: "NCT 127 - BLACK STARFISH DOLL KEYRING ‘NEO CITY : SEOUL – THE MOMENTUM’",
     price: "450.000",
+    image: "/fashion/nct-blk-star.webp"
   },
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
-    price: "450.000",
+    artist: "ENHYPEN",
+    title: "ENHYPEN - 2022 GGU GGU PACKAGE",
+    price: "650.000",
+    image: "/fashion/enhypen-pack.webp"
   },
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
-    price: "450.000",
+    artist: "DAY6",
+    title: "DAY6 - OFFICIAL LIGHT BAND VER 3",
+    price: "1.000.000",
+    image: "/fashion/day6-lightband.webp"
   },
   {
-    artist: "aespa",
-    title: "aespa - Savage 1st Mini Album (HALLUCINATION QUEST Ver.)",
-    price: "450.000",
+    artist: "TWICE",
+    title: "TWICE - LIGHT BAND KIT",
+    price: "500.000",
+    image: "/fashion/twice-lightband.webp"
   },
-
 ]
 
 const sampul = [
@@ -192,7 +195,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">fashion</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-            {albums.map((item, index) => {
+            {fashions.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
                   <Card className="border-0 shadow-lg group">
