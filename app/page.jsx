@@ -115,7 +115,6 @@ export default function Home() {
             return (
               <CarouselItem key={index} className="pl-0">
                 <div className="h-[460px] relative group flex justify-center items-center bg-primary">
-                  <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                   <div className="relative w-full h-full">
                     <Image src={item.src} fill className="object-cover" alt="" />
                   </div>

@@ -48,7 +48,7 @@ const AboutUs = () => {
                     </h1>
 
                     <p>
-                        At Pocamerc, we aim to create a one-stop destination where collectors
+                        At PocaMerc, we aim to create a one-stop destination where collectors
                         and fans can easily browse and discover the latest and rarest K-pop merchandise.
                         Whether you're looking for a specific photocard, a must-have album, or the trendiest idol-inspired fashion,
                         our platform helps you explore it all in one place.
