@@ -133,13 +133,13 @@ export default function Home() {
             {photocards.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card className="border-0 shadow-lg">
+                  <Card className="border-0 shadow-lg group">
                     <CardHeader className="p-4 pb-0">
-                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
+                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
                     </CardHeader>
                     <CardContent className="p-0 overflow-hidden">
-                      <img alt="" src={item.image} className="object-cover hover:scale-125 transition-all" />
+                      <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
                     </CardContent>
                     <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
                       <span className="uppercase bg-accent w-full text-center">{item.release}</span>
@@ -164,13 +164,13 @@ export default function Home() {
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card className="border-0 shadow-lg">
+                  <Card className="border-0 shadow-lg group">
                     <CardHeader className="p-4 pb-0">
-                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
+                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
                     </CardHeader>
                     <CardContent className="p-0 overflow-hidden">
-                      <img alt="" src={item.image} className="object-cover hover:scale-125 transition-all" />
+                      <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
                     </CardContent>
                     <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
                       <span className="uppercase bg-accent w-full text-center">{item.release}</span>
@@ -191,20 +191,19 @@ export default function Home() {
         {/* fashion */}
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">fashion</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-row gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {albums.map((item, index) => {
               return (
                 <Link href={"/"} key={index}>
-                  <Card className="border-0 shadow-lg">
-                    <CardHeader>
-                      <CardTitle>{item.title}</CardTitle>
+                  <Card className="border-0 shadow-lg group">
+                    <CardHeader className="p-4 pb-0">
+                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                       <CardDescription className="uppercase">{item.artist}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      Photo
+                    <CardContent className="p-0 overflow-hidden">
+                      <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
                     </CardContent>
-                    <CardFooter className="flex flex-col items-start justify-center gap-2">
-                      <span className="uppercase bg-accent w-full text-center">{item.release}</span>
+                    <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
                       <span>Rp.{item.price}</span>
                     </CardFooter>
                   </Card>

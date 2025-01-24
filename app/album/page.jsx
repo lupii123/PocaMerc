@@ -112,13 +112,13 @@ const Album = () => {
                         {data.slice(startIndex, endIndex).map((item, index) => {
                             return (
                                 <Link href={"/"} key={index}>
-                                    <Card className="border-0 shadow-lg">
+                                    <Card className="border-0 shadow-lg group">
                                         <CardHeader className="p-4 pb-0">
-                                            <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold hover:text-secondary transition-all truncate">{item.title}</CardTitle>
+                                            <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
                                             <CardDescription className="uppercase">{item.artist}</CardDescription>
                                         </CardHeader>
                                         <CardContent className="p-0 overflow-hidden">
-                                            <img alt="" src={item.image} className="object-cover hover:scale-125 transition-all" />
+                                            <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
                                         </CardContent>
                                         <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
                                             <span className="uppercase bg-accent w-full text-center">{item.release}</span>
