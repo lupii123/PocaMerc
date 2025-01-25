@@ -3,76 +3,7 @@ import { Card, CardContent, CardTitle, CardDescription, CardFooter, CardHeader }
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import Link from "next/link";
 import { useState } from "react";
-
-const fashions = [
-    {
-        artist: "nct 127",
-        title: "NCT 127 - BLACK STARFISH DOLL KEYRING ‘NEO CITY : SEOUL – THE MOMENTUM’",
-        price: "450.000",
-        image: "/fashion/nct-blk-star.webp"
-    },
-    {
-        artist: "nct 127",
-        title: "NCT 127 - BLACK STARFISH DOLL KEYRING ‘NEO CITY : SEOUL – THE MOMENTUM’",
-        price: "450.000",
-        image: "/fashion/nct-blk-star.webp"
-    },
-    {
-        artist: "nct 127",
-        title: "NCT 127 - BLACK STARFISH DOLL KEYRING ‘NEO CITY : SEOUL – THE MOMENTUM’",
-        price: "450.000",
-        image: "/fashion/nct-blk-star.webp"
-    },
-    {
-        artist: "ENHYPEN",
-        title: "ENHYPEN - 2022 GGU GGU PACKAGE",
-        price: "650.000",
-        image: "/fashion/enhypen-pack.webp"
-    },
-    {
-        artist: "ENHYPEN",
-        title: "ENHYPEN - 2022 GGU GGU PACKAGE",
-        price: "650.000",
-        image: "/fashion/enhypen-pack.webp"
-    },
-    {
-        artist: "ENHYPEN",
-        title: "ENHYPEN - 2022 GGU GGU PACKAGE",
-        price: "650.000",
-        image: "/fashion/enhypen-pack.webp"
-    },
-    {
-        artist: "DAY6",
-        title: "DAY6 - OFFICIAL LIGHT BAND VER 3",
-        price: "1.000.000",
-        image: "/fashion/day6-lightband.webp"
-    },
-    {
-        artist: "DAY6",
-        title: "DAY6 - OFFICIAL LIGHT BAND VER 3",
-        price: "1.000.000",
-        image: "/fashion/day6-lightband.webp"
-    },
-    {
-        artist: "TWICE",
-        title: "TWICE - LIGHT BAND KIT",
-        price: "500.000",
-        image: "/fashion/twice-lightband.webp"
-    },
-    {
-        artist: "TWICE",
-        title: "TWICE - LIGHT BAND KIT",
-        price: "500.000",
-        image: "/fashion/twice-lightband.webp"
-    },
-    {
-        artist: "TWICE",
-        title: "TWICE - LIGHT BAND KIT",
-        price: "500.000",
-        image: "/fashion/twice-lightband.webp"
-    },
-]
-
+import { fashions } from "@/components/DataDummy";
 
 
 const Fashion = () => {
@@ -100,7 +31,7 @@ const Fashion = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {data.slice(startIndex, endIndex).map((item, index) => {
                             return (
-                                <Link href={"/"} key={index}>
+                                <Link href={item.href} key={index}>
                                     <Card className="border-0 shadow-lg group">
                                         <CardHeader className="p-4 pb-0">
                                             <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>

@@ -3,95 +3,7 @@ import { Card, CardContent, CardTitle, CardDescription, CardFooter, CardHeader }
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import Link from "next/link";
 import { useState } from "react";
-
-const photocards = [
-    {
-        artist: "blackpink",
-        title: "ROSE - -R- Photobook [Special Edition]",
-        release: "2 Januari 2025",
-        price: "290.000",
-        image: "/photocard/rose-r.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "ROSE - -R- Photobook [Special Edition]",
-        release: "2 Januari 2025",
-        price: "290.000",
-        image: "/photocard/rose-r.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "ROSE - -R- Photobook [Special Edition]",
-        release: "2 Januari 2025",
-        price: "290.000",
-        image: "/photocard/rose-r.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "ROSE - -R- Photobook [Special Edition]",
-        release: "2 Januari 2025",
-        price: "290.000",
-        image: "/photocard/rose-r.webp"
-    },
-    {
-        artist: "bts",
-        title: "BTS V - ‘TYPE 1’",
-        release: "28 Desember 2024",
-        price: "500.000",
-        image: "/photocard/bts_v_type1.webp"
-    },
-    {
-        artist: "bts",
-        title: "BTS V - ‘TYPE 1’",
-        release: "28 Desember 2024",
-        price: "500.000",
-        image: "/photocard/bts_v_type1.webp"
-    },
-    {
-        artist: "bts",
-        title: "BTS V - ‘TYPE 1’",
-        release: "28 Desember 2024",
-        price: "500.000",
-        image: "/photocard/bts_v_type1.webp"
-    },
-    {
-        artist: "bts",
-        title: "BTS V - ‘TYPE 1’",
-        release: "28 Desember 2024",
-        price: "500.000",
-        image: "/photocard/bts_v_type1.webp"
-    },
-    {
-        artist: "Seventeen",
-        title: "DICON VOLUME No. 26 (Unit-type) WONWOO MINGYU’",
-        release: "27 februari 2025",
-        price: "700.000",
-        image: "/photocard/dicon_volume_26.webp"
-    },
-    {
-        artist: "Seventeen",
-        title: "DICON VOLUME No. 26 (Unit-type) WONWOO MINGYU’",
-        release: "27 februari 2025",
-        price: "700.000",
-        image: "/photocard/dicon_volume_26.webp"
-    },
-    {
-        artist: "Seventeen",
-        title: "DICON VOLUME No. 26 (Unit-type) WONWOO MINGYU’",
-        release: "27 februari 2025",
-        price: "700.000",
-        image: "/photocard/dicon_volume_26.webp"
-    },
-    {
-        artist: "Seventeen",
-        title: "DICON VOLUME No. 26 (Unit-type) WONWOO MINGYU’",
-        release: "27 februari 2025",
-        price: "700.000",
-        image: "/photocard/dicon_volume_26.webp"
-    },
-]
-
-
+import { photocards } from "@/components/DataDummy";
 
 const Photocard = () => {
 
@@ -118,7 +30,7 @@ const Photocard = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {data.slice(startIndex, endIndex).map((item, index) => {
                             return (
-                                <Link href={"/"} key={index}>
+                                <Link href={item.href} key={index}>
                                     <Card className="border-0 shadow-lg group">
                                         <CardHeader className="p-4 pb-0">
                                             <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>

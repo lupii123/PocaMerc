@@ -3,88 +3,7 @@ import { Card, CardContent, CardTitle, CardDescription, CardFooter, CardHeader }
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import Link from "next/link";
 import { useState } from "react";
-
-const albums = [
-    {
-        artist: "seventeen",
-        title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
-        release: "6 Oktober 2024",
-        price: "320.000",
-        image: "/album/seventeen-best.webp"
-    },
-    {
-        artist: "seventeen",
-        title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
-        release: "6 Oktober 2024",
-        price: "320.000",
-        image: "/album/seventeen-best.webp"
-    },
-    {
-        artist: "seventeen",
-        title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
-        release: "6 Oktober 2024",
-        price: "320.000",
-        image: "/album/seventeen-best.webp"
-    },
-    {
-        artist: "seventeen",
-        title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
-        release: "6 Oktober 2024",
-        price: "320.000",
-        image: "/album/seventeen-best.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "(YG SELECT & KPOP MERCH Exclusive Benefit) JISOO - FIRST SINGLE ALBUM ME",
-        release: "25 November 2024",
-        price: "252.000",
-        image: "/album/yg_select_bp.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "(YG SELECT & KPOP MERCH Exclusive Benefit) JISOO - FIRST SINGLE ALBUM ME",
-        release: "25 November 2024",
-        price: "252.000",
-        image: "/album/yg_select_bp.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "(YG SELECT & KPOP MERCH Exclusive Benefit) JISOO - FIRST SINGLE ALBUM ME",
-        release: "25 November 2024",
-        price: "252.000",
-        image: "/album/yg_select_bp.webp"
-    },
-    {
-        artist: "blackpink",
-        title: "(YG SELECT & KPOP MERCH Exclusive Benefit) JISOO - FIRST SINGLE ALBUM ME",
-        release: "25 November 2024",
-        price: "252.000",
-        image: "/album/yg_select_bp.webp"
-    },
-    {
-        artist: "LE SSERAFIM",
-        title: "LE SSERAFIM - 4th Mini Album 'CRAZY' (BALACLAVA ver)",
-        release: "1 Januari 2025",
-        price: "505.000",
-        image: "/album/lesserafim-album.webp"
-    },
-    {
-        artist: "LE SSERAFIM",
-        title: "LE SSERAFIM - 4th Mini Album 'CRAZY' (BALACLAVA ver)",
-        release: "1 Januari 2025",
-        price: "505.000",
-        image: "/album/lesserafim-album.webp"
-    },
-    {
-        artist: "LE SSERAFIM",
-        title: "LE SSERAFIM - 4th Mini Album 'CRAZY' (BALACLAVA ver)",
-        release: "1 Januari 2025",
-        price: "505.000",
-        image: "/album/lesserafim-album.webp"
-    },
-]
-
-
+import { albums } from "@/components/DataDummy";
 
 const Album = () => {
 
@@ -111,7 +30,7 @@ const Album = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {data.slice(startIndex, endIndex).map((item, index) => {
                             return (
-                                <Link href={"/"} key={index}>
+                                <Link href={item.href} key={index}>
                                     <Card className="border-0 shadow-lg group">
                                         <CardHeader className="p-4 pb-0">
                                             <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
