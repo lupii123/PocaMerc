@@ -4,12 +4,9 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { FaPlus, FaMinus } from "react-icons/fa"
 import React, { useState } from "react";
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, } from "@/components/ui/tooltip"
+import { useToast } from "@/hooks/use-toast";
+
 
 const data = {
     artist: "nct 127",
@@ -22,7 +19,7 @@ const data = {
 }
 
 const Detail = () => {
-    const [value, setValue] = useState(1);
+    const [quantity, setQuantity] = useState(1);
 
     const handleInput = (e) => {
         let inputValue = e.target.value;
@@ -30,29 +27,31 @@ const Detail = () => {
         inputValue = inputValue.replace(/[^0-9]/g, "");
 
         if (inputValue.trim() === "") {
-            inputValue = value;
+            inputValue = quantity;
         }
 
         if (inputValue > 100) {
             inputValue = 100;
         }
 
-        setValue(parseInt(inputValue));
+        setQuantity(parseInt(inputValue));
     }
 
     const increaseQuantity = () => {
-        if (value < 100) {
-            let newValue = value + 1;
-            setValue(parseInt(newValue));
+        if (quantity < 100) {
+            let newValue = quantity + 1;
+            setQuantity(parseInt(newValue));
         }
     }
 
     const decreaseQuantity = () => {
-        if (value > 1) {
-            let newValue = value - 1;
-            setValue(parseInt(newValue));
+        if (quantity > 1) {
+            let newValue = quantity - 1;
+            setQuantity(parseInt(newValue));
         }
     }
+
+    const { toast } = useToast()
 
     return (
         <div className="container mx-auto flex flex-col my-20">
@@ -103,7 +102,7 @@ const Detail = () => {
                                 id="quantity"
                                 type="number"
                                 min="1"
-                                value={value}
+                                value={quantity}
                                 onInput={handleInput}
                                 className="appearance-none no-spinner text-lg font-bold text-secondary h-[50px] rounded-none border-x-0 border-black text-center w-[100px] z-10 focus:outline-none focus:border-2"
                             />
@@ -113,7 +112,17 @@ const Detail = () => {
                         </div>
                     </div>
 
-                    <Button className="w-full rounded-none text-xl mt-4 py-6">Add to Cart</Button>
+                    <Button
+                        className="w-full rounded-none text-xl mt-4 py-6"
+                        onClick={() => {
+                            toast({
+                                description: `${data.title} x${quantity}`,
+                                title: "Product successfully added to cart.",
+                            })
+                        }}
+                    >
+                        Add to Cart
+                    </Button>
                 </div>
             </div>
 
@@ -121,11 +130,21 @@ const Detail = () => {
             <div className="flex flex-col">
                 <h2 className="text-center text-secondary py-10">Description</h2>
                 <h3 className="text-center">{data.title}</h3>
-                <p className="py-10 text-lg">
+                <p className="pt-10 text-lg">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p className="pt-10 text-lg">
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+                    vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
                 </p>
             </div>
         </div>

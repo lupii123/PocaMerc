@@ -41,6 +41,7 @@ export default function Home() {
       </Carousel>
 
       <div className="container mx-auto h-full flex flex-col gap-20 my-20">
+
         {/* photocard */}
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">photocard</h1>
