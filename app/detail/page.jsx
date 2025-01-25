@@ -4,6 +4,12 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { FaPlus, FaMinus } from "react-icons/fa"
 import React, { useState } from "react";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const data = {
     artist: "nct 127",
@@ -52,7 +58,16 @@ const Detail = () => {
         <div className="container mx-auto flex flex-col my-20">
             <div className="flex flex-col lg:flex-row items-center justify-between flex-wrap gap-4 border-b-2 pb-10">
                 <div className="flex-1 flex items-center justify-center group overflow-hidden">
-                    <img alt="" src={data.image} className="object-cover group-hover:scale-125 transition-all" />
+                    <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <img alt="" src={data.image} className="object-cover group-hover:scale-125 transition-all" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                {data.title}
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
                 </div>
                 <div className="flex-1 flex-flex-col">
                     <div className="flex flex-col border-b-2 border-neutral-300 py-4">

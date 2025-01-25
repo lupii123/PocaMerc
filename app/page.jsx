@@ -4,6 +4,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from "next/image";
 import Link from "next/link";
 import { photocards, albums, fashions } from '@/components/DataDummy'
+import ProductCard from "@/components/ProductCard";
+import { TooltipTrigger, Tooltip, TooltipProvider, TooltipContent } from "@/components/ui/tooltip";
 
 const sampul = [
   {
@@ -46,21 +48,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {photocards.slice(0, 4).map((item, index) => {
               return (
-                <Link href={item.href} key={index}>
-                  <Card className="border-0 shadow-lg group">
-                    <CardHeader className="p-4 pb-0">
-                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
-                      <CardDescription className="uppercase">{item.artist}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-0 overflow-hidden">
-                      <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
-                    </CardContent>
-                    <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
-                      <span className="uppercase bg-accent w-full text-center">{item.release}</span>
-                      <span>Rp.{item.price}</span>
-                    </CardFooter>
-                  </Card>
-                </Link>
+                <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <ProductCard
+                        href={item.href}
+                        title={item.title}
+                        artist={item.artist}
+                        image={item.image}
+                        price={item.price}
+                        release={item.release}
+                        key={index}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {item.title}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               );
             })}
           </div>
@@ -77,21 +82,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {albums.slice(0, 4).map((item, index) => {
               return (
-                <Link href={item.href} key={index}>
-                  <Card className="border-0 shadow-lg group">
-                    <CardHeader className="p-4 pb-0">
-                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
-                      <CardDescription className="uppercase">{item.artist}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-0 overflow-hidden">
-                      <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
-                    </CardContent>
-                    <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
-                      <span className="uppercase bg-accent w-full text-center">{item.release}</span>
-                      <span>Rp.{item.price}</span>
-                    </CardFooter>
-                  </Card>
-                </Link>
+                <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <ProductCard
+                        href={item.href}
+                        title={item.title}
+                        artist={item.artist}
+                        image={item.image}
+                        price={item.price}
+                        release={item.release}
+                        key={index}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {item.title}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               );
             })}
           </div>
@@ -108,20 +116,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {fashions.slice(0, 4).map((item, index) => {
               return (
-                <Link href={item.href} key={index}>
-                  <Card className="border-0 shadow-lg group">
-                    <CardHeader className="p-4 pb-0">
-                      <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
-                      <CardDescription className="uppercase">{item.artist}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-0 overflow-hidden">
-                      <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
-                    </CardContent>
-                    <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
-                      <span>Rp.{item.price}</span>
-                    </CardFooter>
-                  </Card>
-                </Link>
+                <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <ProductCard
+                        href={item.href}
+                        title={item.title}
+                        artist={item.artist}
+                        image={item.image}
+                        price={item.price}
+                        release={item.release}
+                        key={index}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {item.title}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               );
             })}
           </div>

@@ -200,6 +200,7 @@ const fashions = [
     {
         artist: "TWICE",
         title: "TWICE - LIGHT BAND KIT",
+        release: "5 September 2024",
         price: "500.000",
         image: "/fashion/twice-lightband.webp",
         href: "/detail",
@@ -215,6 +216,7 @@ const fashions = [
     {
         artist: "ENHYPEN",
         title: "ENHYPEN - 2022 GGU GGU PACKAGE",
+        release: "5 September 2024",
         price: "650.000",
         image: "/fashion/enhypen-pack.webp",
         href: "/detail",
@@ -222,6 +224,7 @@ const fashions = [
     {
         artist: "ENHYPEN",
         title: "ENHYPEN - 2022 GGU GGU PACKAGE",
+        release: "5 September 2024",
         price: "650.000",
         image: "/fashion/enhypen-pack.webp",
         href: "/detail",
@@ -229,6 +232,7 @@ const fashions = [
     {
         artist: "ENHYPEN",
         title: "ENHYPEN - 2022 GGU GGU PACKAGE",
+        release: "5 September 2024",
         price: "650.000",
         image: "/fashion/enhypen-pack.webp",
         href: "/detail",
@@ -236,6 +240,7 @@ const fashions = [
     {
         artist: "DAY6",
         title: "DAY6 - OFFICIAL LIGHT BAND VER 3",
+        release: "5 September 2024",
         price: "1.000.000",
         image: "/fashion/day6-lightband.webp",
         href: "/detail",
@@ -243,6 +248,7 @@ const fashions = [
     {
         artist: "DAY6",
         title: "DAY6 - OFFICIAL LIGHT BAND VER 3",
+        release: "5 September 2024",
         price: "1.000.000",
         image: "/fashion/day6-lightband.webp",
         href: "/detail",
@@ -258,6 +264,7 @@ const fashions = [
     {
         artist: "TWICE",
         title: "TWICE - LIGHT BAND KIT",
+        release: "5 September 2024",
         price: "500.000",
         image: "/fashion/twice-lightband.webp",
         href: "/detail",
@@ -265,6 +272,7 @@ const fashions = [
     {
         artist: "TWICE",
         title: "TWICE - LIGHT BAND KIT",
+        release: "5 September 2024",
         price: "500.000",
         image: "/fashion/twice-lightband.webp",
         href: "/detail",
