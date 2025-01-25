@@ -1,9 +1,10 @@
 'use client';
-import { Card, CardContent, CardTitle, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
+import { TooltipTrigger, Tooltip, TooltipProvider, TooltipContent } from "@/components/ui/tooltip";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import Link from "next/link";
 import { useState } from "react";
 import { fashions } from "@/components/DataDummy";
+import ProductCard from "@/components/ProductCard";
 
 
 const Fashion = () => {
@@ -31,20 +32,23 @@ const Fashion = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {data.slice(startIndex, endIndex).map((item, index) => {
                             return (
-                                <Link href={item.href} key={index}>
-                                    <Card className="border-0 shadow-lg group">
-                                        <CardHeader className="p-4 pb-0">
-                                            <CardTitle className="text-3xl md:text-2xl xl:text-xl font-bold group-hover:text-secondary transition-all truncate">{item.title}</CardTitle>
-                                            <CardDescription className="uppercase">{item.artist}</CardDescription>
-                                        </CardHeader>
-                                        <CardContent className="p-0 overflow-hidden">
-                                            <img alt="" src={item.image} className="object-cover group-hover:scale-125 transition-all" />
-                                        </CardContent>
-                                        <CardFooter className="flex flex-col items-start justify-center gap-2 p-4 pt-0">
-                                            <span>Rp.{item.price}</span>
-                                        </CardFooter>
-                                    </Card>
-                                </Link>
+                                <TooltipProvider delayDuration={200} skipDelayDuration={0} key={index}>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <ProductCard
+                                                href={item.href}
+                                                title={item.title}
+                                                artist={item.artist}
+                                                image={item.image}
+                                                price={item.price}
+                                                release={item.release}
+                                            />
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            {item.title}
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
                             );
                         })}
                     </div>

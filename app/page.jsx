@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, } from "@/components/ui/carousel";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,14 +40,14 @@ export default function Home() {
         <CarouselNext />
       </Carousel>
 
-      <div className="container mx-auto h-full flex flex-col gap-20 my-8">
+      <div className="container mx-auto h-full flex flex-col gap-20 my-20">
         {/* photocard */}
         <div className="flex flex-col items-center justify-center gap-8">
           <h1 className="text-secondary uppercase">photocard</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {photocards.slice(0, 4).map((item, index) => {
               return (
-                <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                <TooltipProvider delayDuration={200} skipDelayDuration={0} key={index}>
                   <Tooltip>
                     <TooltipTrigger>
                       <ProductCard
@@ -58,7 +57,6 @@ export default function Home() {
                         image={item.image}
                         price={item.price}
                         release={item.release}
-                        key={index}
                       />
                     </TooltipTrigger>
                     <TooltipContent>
@@ -82,7 +80,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {albums.slice(0, 4).map((item, index) => {
               return (
-                <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                <TooltipProvider delayDuration={200} skipDelayDuration={0} key={index}>
                   <Tooltip>
                     <TooltipTrigger>
                       <ProductCard
@@ -92,7 +90,6 @@ export default function Home() {
                         image={item.image}
                         price={item.price}
                         release={item.release}
-                        key={index}
                       />
                     </TooltipTrigger>
                     <TooltipContent>
@@ -116,7 +113,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {fashions.slice(0, 4).map((item, index) => {
               return (
-                <TooltipProvider delayDuration={200} skipDelayDuration={0}>
+                <TooltipProvider delayDuration={200} skipDelayDuration={0} key={index}>
                   <Tooltip>
                     <TooltipTrigger>
                       <ProductCard
@@ -126,7 +123,6 @@ export default function Home() {
                         image={item.image}
                         price={item.price}
                         release={item.release}
-                        key={index}
                       />
                     </TooltipTrigger>
                     <TooltipContent>
