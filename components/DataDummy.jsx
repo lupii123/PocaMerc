@@ -99,11 +99,11 @@ const photocards = [
 
 const albums = [
     {
-        artist: "seventeen",
-        title: "SEVENTEEN - SEVENTEEN BEST ALBUM [17 IS RIGHT HERE] DEAR Ver.",
-        release: "6 Oktober 2024",
-        price: "320.000",
-        image: "/album/seventeen-best.webp",
+        artist: "ENHYPEN",
+        title: "ROMANCE:UNTOLD -daydream- (set).",
+        release: "11 November 2024",
+        price: "628.000",
+        image: "/album/Enhypen daydream.jpg",
         href: "/detail",
     },
     {
@@ -190,11 +190,11 @@ const albums = [
 
 const fashions = [
     {
-        artist: "nct 127",
-        title: "NCT 127 - BLACK STARFISH DOLL KEYRING ‘NEO CITY : SEOUL – THE MOMENTUM’",
-        release: "5 September 2024",
+        artist: "ENHYPEN",
+        title: "ENHYPEN - DAYDREAM KEYRING ",
+        release: "14 November 2024",
         price: "450.000",
-        image: "/fashion/nct-blk-star.webp",
+        image: "/fashion/keyring ehypen.png",
         href: "/detail",
     },
     {
