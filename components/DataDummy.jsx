@@ -1,6 +1,6 @@
 const photocards = [
     {
-        artist: "blackpink",
+        artist: "BLACKPINK",
         title: "ROSE - -R- Photobook [Special Edition]",
         release: "2 Januari 2025",
         price: "290.000",
@@ -8,7 +8,7 @@ const photocards = [
         href: "/detail",
     },
     {
-        artist: "bts",
+        artist: "BTS",
         title: "BTS V - ‘TYPE 1’",
         release: "28 Desember 2024",
         price: "500.000",
@@ -16,11 +16,11 @@ const photocards = [
         href: "/detail",
     },
     {
-        artist: "blackpink",
-        title: "ROSE - -R- Photobook [Special Edition]",
-        release: "2 Januari 2025",
-        price: "290.000",
-        image: "/photocard/rose-r.webp",
+        artist: "ENHYPEN",
+        title: "ROMANCE:UNTOLD -daydream-(set)]",
+        release: "11 November 2024",
+        price: "468.000",
+        image: "/photocard/enhypen photocard daydream.jpg",
         href: "/detail",
     },
     {

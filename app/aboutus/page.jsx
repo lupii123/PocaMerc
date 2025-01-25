@@ -48,10 +48,9 @@ const AboutUs = () => {
                     </h1>
 
                     <p>
-                        At PocaMerc, we aim to create a one-stop destination where collectors
-                        and fans can easily browse and discover the latest and rarest K-pop merchandise.
-                        Whether you're looking for a specific photocard, a must-have album, or the trendiest idol-inspired fashion or accessories,
-                        our platform helps you explore it all in one place.
+                    At PocaMerc, we aim to make it a one-stop destination for photocard collectors and fans to easily browse and discover the newest and rarest K-pop merchandise.
+                    Whether you're looking for a specific photo card, a must-have album, 
+                    or the trendiest idol-inspired fashion or accessories, our platform helps you explore everything in one place.
                     </p>
                     <p>
                         Join us in celebrating the vibrant world of K-pop—because every fan deserves the best!
