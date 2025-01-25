@@ -24,30 +24,24 @@ const Detail = () => {
     const handleInput = (e) => {
         let inputValue = e.target.value;
 
-        inputValue = inputValue.replace(/[^0-9]/g, "");
-
-        if (inputValue.trim() === "") {
-            inputValue = quantity;
+        if (inputValue > 200) {
+            inputValue = 200;
         }
 
-        if (inputValue > 100) {
-            inputValue = 100;
-        }
-
-        setQuantity(parseInt(inputValue));
+        setQuantity(inputValue);
     }
 
     const increaseQuantity = () => {
-        if (quantity < 100) {
-            let newValue = quantity + 1;
-            setQuantity(parseInt(newValue));
+        if (quantity < 200) {
+            let newValue = parseInt(quantity) + 1;
+            setQuantity(newValue);
         }
     }
 
     const decreaseQuantity = () => {
         if (quantity > 1) {
-            let newValue = quantity - 1;
-            setQuantity(parseInt(newValue));
+            let newValue = parseInt(quantity) - 1;
+            setQuantity(newValue);
         }
     }
 
@@ -103,7 +97,12 @@ const Detail = () => {
                                 type="number"
                                 min="1"
                                 value={quantity}
-                                onInput={handleInput}
+                                onChange={handleInput}
+                                onKeyPress={(event) => {
+                                    if (!/[0-9]/.test(event.key)) {
+                                        event.preventDefault();
+                                    }
+                                }}
                                 className="appearance-none no-spinner text-lg font-bold text-secondary h-[50px] rounded-none border-x-0 border-black text-center w-[100px] z-10 focus:outline-none focus:border-2"
                             />
                             <Button onClick={decreaseQuantity} className="text-3xl h-[50px] w-[50px] rounded-none flex items-center justify-center border-[1px] border-black border-l-0 bg-primary text-secondary hover:bg-neutral-300/30">
