@@ -27,7 +27,7 @@ export default function Home() {
           {sampul.map((item, index) => {
             return (
               <CarouselItem key={index} className="pl-0">
-                <div className="h-[460px] relative group flex justify-center items-center bg-primary">
+                <div className="h-[460px] relative group flex justify-center items-center bg-gray-200">
                   <div className="relative w-full h-full">
                     <Image src={item.src} fill className="object-cover" alt="" />
                   </div>
@@ -44,7 +44,7 @@ export default function Home() {
 
         {/* photocard */}
         <div className="flex flex-col items-center justify-center gap-8">
-          <h1 className="text-secondary uppercase">photocard</h1>
+          <h1 className="text-secondary uppercase">Photocard</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {photocards.slice(0, 4).map((item, index) => {
               return (
@@ -77,7 +77,7 @@ export default function Home() {
 
         {/* album */}
         <div className="flex flex-col items-center justify-center gap-8">
-          <h1 className="text-secondary uppercase">album</h1>
+          <h1 className="text-secondary uppercase">Album</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {albums.slice(0, 4).map((item, index) => {
               return (
@@ -110,7 +110,7 @@ export default function Home() {
 
         {/* fashion */}
         <div className="flex flex-col items-center justify-center gap-8">
-          <h1 className="text-secondary uppercase">fashion</h1>
+          <h1 className="text-secondary uppercase">Fashion</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {fashions.slice(0, 4).map((item, index) => {
               return (
